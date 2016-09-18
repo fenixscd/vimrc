@@ -35,7 +35,7 @@ Plug 'jlanzarotta/bufexplorer'  " Abre una bentana con los buffers activos
 Plug 'scrooloose/nerdcommenter' " Para crear comentarios
 Plug 'itchyny/lightline.vim'    " Barras de colores github.com/itchyny/lightline.vim
 
-Plug 'm2mdas/phpcomplete-extended'          "Auto completar para php
+"Plug 'm2mdas/phpcomplete-extended'          "Auto completar para php falla
 Plug 'Shougo/unite.vim'                     "Buscador de archivos necesario para autocompletar php
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}  "Necesario para el autocompletar de
 Plug 'terryma/vim-multiple-cursors'     " Multiples cousores
