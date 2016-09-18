@@ -13,7 +13,7 @@ set nocompatible " Que no sea compatible con vi
 set history=1000 " Tamaño del historico.
 
 " =================
-" 2. VIM-PLUG PLUGINS
+" 2. VIM-PLUG PLUGINS https://github.com/junegunn/vim-plug
 " =================
 " Init vim-plug
 if has("win32") || has("win64")
@@ -32,20 +32,33 @@ Plug 'ctrlpvim/ctrlp.vim'       "Un busacador de archivos con sugerencias
 Plug 'ap/vim-buftabline'        "Aparecen pestañas en la parte superior
 Plug 'mattn/emmet-vim'          "Para escribir html más rapido.
 
+Plug 'jlanzarotta/bufexplorer'  " Abre una bentana con los buffers activos
+Plug 'scrooloose/nerdcommenter' " Para crear comentarios
+Plug 'itchyny/lightline.vim'    " Barras de colores github.com/itchyny/lightline.vim
+
+Plug 'm2mdas/phpcomplete-extended'          "Auto completar para php
+Plug 'Shougo/unite.vim'                     "Buscador de archivos necesario para autocompletar php
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}  "Necesario para el autocompletar de
+Plug 'terryma/vim-multiple-cursors'     " Multiples cousores
+Plug 'tpope/vim-commentary'             " Para añadir comentarios
+Plug 'scrooloose/syntastic'             " Verifica la sintaxis https://github.com/scrooloose/syntastic
+
 "Plug 'editorconfig/editorconfig-vim'
 "Plug 'Valloric/YouCompleteMe'
 
-" Language support
-"Plug 'wlangstroth/vim-racket'
-"Plug 'tfnico/vim-gradle'
-"Plug 'tpope/vim-rails'
-"Plug 'tpope/vim-endwise'
-"Plug 'alvan/vim-closetag'
-"Plug 'rust-lang/rust.vim'
-"Plug 'racer-rust/vim-racer'
-
 " Colorschemes
 Plug 'cschlueter/vim-wombat'
+
+"""""""" MAS PLUGINS""""""""""""""""""
+"Plug 'othree/vim-autocomplpop'  " Buscar archivos con auto completado ctrl+p
+"Plug 'garbas/vim-snipmate'      " Para crear snippets
+"Plug 'MarcWeber/vim-addon-mw-utils' " Requerido por vim-snipmate
+"Plug 'tomtom/tlib_vim'              " Requerido por vim-snipmate
+"Plug dsfñkladhgñaklhdfiiikdsafñlkjadsflk'garbas/vim-snipmate'          " Requerido por vim-snipmate
+"Plug 'honza/vim-snippets'       " Repositorio de snippets para diferentes lenguajes
+"Plug 'mileszs/ack.vim'          " Buscar archivos con sugerencias
+
+
 
 call plug#end()
 
@@ -90,7 +103,7 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 " Are we supporting colors?
 if &t_Co > 2 || has("gui_running")
    syntax on
-   set colorcolumn=80
+   set colorcolumn=90
    silent! color wombat
 endif
 
@@ -159,7 +172,7 @@ imap <C-P> <Esc>:bprev<CR>a
 " NERDTree: map ,nt for toggling NERDTree. Faster than the old :NT command
 " since I don't have to hold Shift whenever I want to display NERDTree.
 nmap <Leader>nt :NERDTreeToggle<cr>
-:let g:NERDTreeWinSize=20
+:let g:NERDTreeWinSize=30
 
 " Relative numbering is pretty useful for motions (3g, 5k...). However I'd
 " prefer to have a way for switching relative numbers with a single map.
