@@ -26,40 +26,40 @@ call vundle#begin()
 " alternativamente, pasar una ruta donde Vundle debería instalar complementos
 "call vundle#begin('~/some/path/here')
 
-  Plug 'scrooloose/nerdtree'      "Arbol de directorios
-  Plug 'tpope/vim-fugitive'       "Para git
-  Plug 'airblade/vim-gitgutter'   "Pone + cuando cambias una linea
-  Plug 'majutsushi/tagbar'        "Lita de funciones que hay un archivo
-  Plug 'ctrlpvim/ctrlp.vim'       "Un busacador de archivos con sugerencias
+  Plugin 'scrooloose/nerdtree'      "Arbol de directorios
+  Plugin 'tpope/vim-fugitive'       "Para git
+  Plugin 'airblade/vim-gitgutter'   "Pone + cuando cambias una linea
+  Plugin 'majutsushi/tagbar'        "Lita de funciones que hay un archivo
+  Plugin 'ctrlpvim/ctrlp.vim'       "Un busacador de archivos con sugerencias
 
-  Plug 'mattn/emmet-vim'          "Para escribir html más rapido.
+  Plugin 'mattn/emmet-vim'          "Para escribir html más rapido.
 
-  Plug 'jlanzarotta/bufexplorer'  " Abre una bentana con los buffers activos
-  Plug 'scrooloose/nerdcommenter' " Para crear comentarios
-  Plug 'itchyny/lightline.vim'    " Barras de colores github.com/itchyny/lightline.vim
+  Plugin 'jlanzarotta/bufexplorer'  " Abre una bentana con los buffers activos
+  Plugin 'scrooloose/nerdcommenter' " Para crear comentarios
+  Plugin 'itchyny/lightline.vim'    " Barras de colores github.com/itchyny/lightline.vim
 
-  "Plug 'm2mdas/phpcomplete-extended'          "Auto completar para php falla
-  Plug 'Shougo/unite.vim'                     "Buscador de archivos necesario para autocompletar php
-  Plug 'Shougo/vimproc.vim', {'do' : 'make'}  "Necesario para el autocompletar de
-  Plug 'terryma/vim-multiple-cursors'     " Multiples cousores
-  Plug 'tpope/vim-commentary'             " Para añadir comentarios
-  Plug 'scrooloose/syntastic'             " Verifica la sintaxis https://github.com/scrooloose/syntastic
+  "Plugin 'm2mdas/phpcomplete-extended'          "Auto completar para php falla
+  Plugin 'Shougo/unite.vim'                     "Buscador de archivos necesario para autocompletar php
+  Plugin 'Shougo/vimproc.vim', {'do' : 'make'}  "Necesario para el autocompletar de
+  Plugin 'terryma/vim-multiple-cursors'     " Multiples cousores
+  Plugin 'tpope/vim-commentary'             " Para añadir comentarios
+  Plugin 'scrooloose/syntastic'             " Verifica la sintaxis https://github.com/scrooloose/syntastic
 
-  "Plug 'editorconfig/editorconfig-vim'
-  "Plug 'Valloric/YouCompleteMe'
+  "Plugin 'editorconfig/editorconfig-vim'
+  "Plugin 'Valloric/YouCompleteMe'
 
   " Colorschemes
-  Plug 'cschlueter/vim-wombat'
+  Plugin 'cschlueter/vim-wombat'
 
   """""""" MAS PLUGINS""""""""""""""""""
-  Plug 'ap/vim-buftabline'        "Aparecen pestañas en la parte superior
-  "Plug 'othree/vim-autocomplpop'  " Buscar archivos con auto completado ctrl+p
-  "Plug 'garbas/vim-snipmate'      " Para crear snippets
-  "Plug 'MarcWeber/vim-addon-mw-utils' " Requerido por vim-snipmate
-  "Plug 'tomtom/tlib_vim'              " Requerido por vim-snipmate
-  "Plug dsfñkladhgñaklhdfiiikdsafñlkjadsflk'garbas/vim-snipmate'          " Requerido por vim-snipmate
-  "Plug 'honza/vim-snippets'       " Repositorio de snippets para diferentes lenguajes
-  "Plug 'mileszs/ack.vim'          " Buscar archivos con sugerencias
+  Plugin 'ap/vim-buftabline'        "Aparecen pestañas en la parte superior
+  "Plugin 'othree/vim-autocomplpop'  " Buscar archivos con auto completado ctrl+p
+  "Plugin 'garbas/vim-snipmate'      " Para crear snippets
+  "Plugin 'MarcWeber/vim-addon-mw-utils' " Requerido por vim-snipmate
+  "Plugin 'tomtom/tlib_vim'              " Requerido por vim-snipmate
+  "Plugin dsfñkladhgñaklhdfiiikdsafñlkjadsflk'garbas/vim-snipmate'          " Requerido por vim-snipmate
+  "Plugin 'honza/vim-snippets'       " Repositorio de snippets para diferentes lenguajes
+  "Plugin 'mileszs/ack.vim'          " Buscar archivos con sugerencias
 
 call vundle#end()            " required
 filetype plugin indent on    " required
