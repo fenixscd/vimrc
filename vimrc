@@ -1,3 +1,4 @@
+#!/bin/vim
 " INDICE DE CONTENICOS:
 " 1. Configuración generica
 " 2. Vim-Plug plugins
@@ -13,54 +14,63 @@ set nocompatible " Que no sea compatible con vi
 set history=1000 " Tamaño del historico.
 
 " =================
-" 2. VIM-PLUG PLUGINS https://github.com/junegunn/vim-plug
+" 2. VIM-PLUG PLUGINS https://github.com/VundleVim/Vundle
 " =================
-" Init vim-plug
+" Init Vundle
 if has("win32") || has("win64")
     call plug#begin('$USERPROFILE/vimfiles/plugged/')
 else
     call plug#begin('~/.vim/plugged/')
 end
 
-" Plug-ins
-Plug 'scrooloose/nerdtree'      "Arbol de directorios
-Plug 'tpope/vim-fugitive'       "Para git
-Plug 'airblade/vim-gitgutter'   "Pone + cuando cambias una linea
-Plug 'majutsushi/tagbar'        "Lita de funciones que hay un archivo
-Plug 'ctrlpvim/ctrlp.vim'       "Un busacador de archivos con sugerencias
+filetype off                  " required
 
-Plug 'mattn/emmet-vim'          "Para escribir html más rapido.
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
 
-Plug 'jlanzarotta/bufexplorer'  " Abre una bentana con los buffers activos
-Plug 'scrooloose/nerdcommenter' " Para crear comentarios
-Plug 'itchyny/lightline.vim'    " Barras de colores github.com/itchyny/lightline.vim
+call vundle#begin()
+" alternativamente, pasar una ruta donde Vundle debería instalar complementos
+"call vundle#begin('~/some/path/here')
 
-"Plug 'm2mdas/phpcomplete-extended'          "Auto completar para php falla
-Plug 'Shougo/unite.vim'                     "Buscador de archivos necesario para autocompletar php
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}  "Necesario para el autocompletar de
-Plug 'terryma/vim-multiple-cursors'     " Multiples cousores
-Plug 'tpope/vim-commentary'             " Para añadir comentarios
-Plug 'scrooloose/syntastic'             " Verifica la sintaxis https://github.com/scrooloose/syntastic
+  Plug 'scrooloose/nerdtree'      "Arbol de directorios
+  Plug 'tpope/vim-fugitive'       "Para git
+  Plug 'airblade/vim-gitgutter'   "Pone + cuando cambias una linea
+  Plug 'majutsushi/tagbar'        "Lita de funciones que hay un archivo
+  Plug 'ctrlpvim/ctrlp.vim'       "Un busacador de archivos con sugerencias
 
-"Plug 'editorconfig/editorconfig-vim'
-"Plug 'Valloric/YouCompleteMe'
+  Plug 'mattn/emmet-vim'          "Para escribir html más rapido.
 
-" Colorschemes
-Plug 'cschlueter/vim-wombat'
+  Plug 'jlanzarotta/bufexplorer'  " Abre una bentana con los buffers activos
+  Plug 'scrooloose/nerdcommenter' " Para crear comentarios
+  Plug 'itchyny/lightline.vim'    " Barras de colores github.com/itchyny/lightline.vim
 
-"""""""" MAS PLUGINS""""""""""""""""""
-Plug 'ap/vim-buftabline'        "Aparecen pestañas en la parte superior
-"Plug 'othree/vim-autocomplpop'  " Buscar archivos con auto completado ctrl+p
-"Plug 'garbas/vim-snipmate'      " Para crear snippets
-"Plug 'MarcWeber/vim-addon-mw-utils' " Requerido por vim-snipmate
-"Plug 'tomtom/tlib_vim'              " Requerido por vim-snipmate
-"Plug dsfñkladhgñaklhdfiiikdsafñlkjadsflk'garbas/vim-snipmate'          " Requerido por vim-snipmate
-"Plug 'honza/vim-snippets'       " Repositorio de snippets para diferentes lenguajes
-"Plug 'mileszs/ack.vim'          " Buscar archivos con sugerencias
+  "Plug 'm2mdas/phpcomplete-extended'          "Auto completar para php falla
+  Plug 'Shougo/unite.vim'                     "Buscador de archivos necesario para autocompletar php
+  Plug 'Shougo/vimproc.vim', {'do' : 'make'}  "Necesario para el autocompletar de
+  Plug 'terryma/vim-multiple-cursors'     " Multiples cousores
+  Plug 'tpope/vim-commentary'             " Para añadir comentarios
+  Plug 'scrooloose/syntastic'             " Verifica la sintaxis https://github.com/scrooloose/syntastic
+
+  "Plug 'editorconfig/editorconfig-vim'
+  "Plug 'Valloric/YouCompleteMe'
+
+  " Colorschemes
+  Plug 'cschlueter/vim-wombat'
+
+  """""""" MAS PLUGINS""""""""""""""""""
+  Plug 'ap/vim-buftabline'        "Aparecen pestañas en la parte superior
+  "Plug 'othree/vim-autocomplpop'  " Buscar archivos con auto completado ctrl+p
+  "Plug 'garbas/vim-snipmate'      " Para crear snippets
+  "Plug 'MarcWeber/vim-addon-mw-utils' " Requerido por vim-snipmate
+  "Plug 'tomtom/tlib_vim'              " Requerido por vim-snipmate
+  "Plug dsfñkladhgñaklhdfiiikdsafñlkjadsflk'garbas/vim-snipmate'          " Requerido por vim-snipmate
+  "Plug 'honza/vim-snippets'       " Repositorio de snippets para diferentes lenguajes
+  "Plug 'mileszs/ack.vim'          " Buscar archivos con sugerencias
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 
-
-call plug#end()
 
 " ================
 " 3. FILE SETTINGS
@@ -71,21 +81,21 @@ set noswapfile
 set nobackup
 
 " Modify indenting settings
-set autoindent              " autoindent always ON.
-set expandtab               " expand tabs
-set shiftwidth=4            " spaces for autoindenting
-set softtabstop=4           " remove a full pseudo-TAB when i press <BS>
+set autoindent              " autoindent siempre encendido.
+set expandtab               " expandir pestañas
+set shiftwidth=4            " espacios para autoindentar
+set softtabstop=4           " eliminar un pseudo-TAB completo cuando presiono <BS>
 
-" Modify some other settings about files
-set encoding=utf-8             " always use unicode (god damnit, windows)
-set backspace=indent,eol,start " backspace always works on insert mode
+" Modificar algunas otras configuraciones sobre archivos
+set encoding=utf-8             " siempre use unicode (dios maldito, ventanas) (god damnit, windows)
+set backspace=indent,eol,start " el retroceso siempre funciona en modo insertar
 set hidden
 
 " =============================
 " 4. SPECIFIC FILETYPE SETTINGS
 " =============================
 
-" Some programming languages work better when only 2 spaces padding is used.
+" Algunos lenguajes de programación funcionan mejor cuando se usa solo 2 espacios de relleno.
 autocmd FileType html,css,sass,scss,javascript setlocal sw=2 sts=2
 autocmd FileType json setlocal sw=2 sts=2
 autocmd FileType ruby,eruby setlocal sw=2 sts=2
@@ -100,7 +110,7 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 " ================
 " 5. COLORS AND UI
 " ================
-" Are we supporting colors?
+" ¿Apoyamos los colores?
 if &t_Co > 2 || has("gui_running")
    syntax on
    set colorcolumn=90
@@ -125,20 +135,20 @@ else
     set list
 endif
 
-set fillchars+=vert:\   " Remove unpleasant pipes from vertical splits
-                        " Sauce on this: http://stackoverflow.com/a/9001540
+set fillchars+=vert:\   " Retire las tuberías desagradables de las divisiones verticales
+                        " Salsa en esto: http://stackoverflow.com/a/9001540
 
 set showmode            " Muestra en que modo estamos
-set laststatus=2        " always show statusbar
-set wildmenu            " enable visual wildmenu
+set laststatus=2        " mostrar siempre la barra de estado
+set wildmenu            " habilitar visual wildmenu
 
-set nowrap              " don't wrap long lines
-set number              " show line numbers
-set relativenumber      " show numbers as relative by default
-set showmatch           " higlight matching parentheses and brackets
+set nowrap              " no envuelva las largas colas
+set number              " mostrar los números de línea
+set relativenumber      " mostrar los números como relativos por defecto
+set showmatch           " resaltar paréntesis y paréntesis correspondientes
 
 if &t_Co >= 256 || has("gui_running")
-    set cursorcolumn    " cursor column is fine but only with enough colors
+    set cursorcolumn    " la columna del cursor está bien pero solo con suficientes colores
 endif
 
 " =====================
@@ -178,9 +188,6 @@ nmap <Leader>nt :NERDTreeToggle<cr>
 " prefer to have a way for switching relative numbers with a single map.
 nmap <F5> :set invrelativenumber<CR>
 imap <F5> <ESC>:set invrelativenumber<CR>a
-
-
-
 
 let g:lightline = {
       \ 'colorscheme': 'default',
