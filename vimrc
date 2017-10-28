@@ -14,14 +14,8 @@ set nocompatible " Que no sea compatible con vi
 set history=1000 " Tamaño del historico.
 
 " =================
-" 2. VIM-PLUG PLUGINS https://github.com/VundleVim/Vundle
+" 2. VUNDLE PLUGINS https://github.com/VundleVim/Vundle
 " =================
-" Init Vundle
-if has("win32") || has("win64")
-    call plug#begin('$USERPROFILE/vimfiles/plugged/')
-else
-    call plug#begin('~/.vim/plugged/')
-end
 
 filetype off                  " required
 

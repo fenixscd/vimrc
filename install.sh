@@ -32,11 +32,11 @@ ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
 
 if vim --version >/dev/null 2>&1; then
-  echo -e "\e[92mTodo instaldo:\e[0m"
-  read parar
-  #vim +PlugInstall +qall
+  vim +PlugInstall +qall
+  echo "Todo instalado"
 else
-  echo -e "\e[91mVim no esta instalado:\e[0m"
-  echo -e "\e[91mInstala vim\e[0m"
-  read parar
+  echo "Vim no esta instalado"
+  echo "Instala vim y despues ejecuta el siguente comando:"
+  echo "vim +PlugInstall +qall"
 fi
+read parar
